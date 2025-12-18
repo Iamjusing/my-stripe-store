@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的小商店</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; margin: 0; }
+        .container { display: flex; gap: 20px; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; width: 200px; }
+        h1 { font-size: 1.5rem; color: #333; }
+        p { color: #666; }
+        button { 
+            background-color: #6772e5; color: white; border: none; padding: 12px 24px; 
+            font-size: 16px; font-weight: 600; border-radius: 4px; cursor: pointer; transition: 0.3s; width: 100%;
+        }
+        button:hover { background-color: #5469d4; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>珍珠奶茶</h1>
+        <p>TWD $100</p>
+        <button onclick="buy('pearl_milk_tea')">立即購買</button>
+    </div>
+
+    <div class="card">
+        <h1>拿鐵咖啡</h1>
+        <p>TWD $150</p>
+        <button onclick="buy('latte_coffee')">立即購買</button>
+    </div>
+</div>
+
+<script>
+    function buy(productId) {
+        // 現在網址只會出現 /checkout?id=pearl_milk_tea
+        window.location.href = `/checkout?id=${productId}`;
+    }
+</script>
+</body>
+</html>
